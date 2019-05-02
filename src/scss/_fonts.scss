@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
+/* Frontage-Outline */
+@font-face {
+  font-family: "Frontage-Outline";
+  src: local("Frontage-Outline"), local("Frontage-Outline"),
+    url("../fonts/Frontage-Outline.woff2") format("woff2"),
+    url("../fonts/Frontage-Outline.woff") format("woff"),
+    url("../fonts/Frontage-Outline.ttf") format("truetype");
+}
+// a_FuturaOrtoSh-Bold
+@font-face {
+  font-family: "a_FuturaOrtoSh-Bold";
+  src: local("a_FuturaOrtoSh"), local("a_FuturaOrtoSh"),
+    url("../fonts/a_FuturaOrtoSh-Bold.svg") format("svg"),
+    url("../fonts/a_FuturaOrtoSh-Bold.woff") format("woff"),
+    url("../fonts/a_FuturaOrtoSh-Bold.ttf") format("truetype");
+}

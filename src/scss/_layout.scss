@@ -1,0 +1,22 @@
+html body {
+  overflow-x: hidden;
+}
+.wrapper {
+  max-width: 1400px;
+}
+// INTRO
+header {
+  display: flex;
+  padding: 0 10%;
+}
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0 10%;
+}
+
+.works {
+  display: flex;
+  flex-wrap: wrap;
+}
