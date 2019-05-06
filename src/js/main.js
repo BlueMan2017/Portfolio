@@ -1,30 +1,18 @@
 import "../scss/main.scss";
 import $ from "jquery";
+import { gridGallery } from "./_grid2";
+import { titleAnimation } from "./_titleAnimation";
+import { customCursor } from "./_customCursor";
+// import { gallery } from "./_gallery";
+// import { horizontalScroll } from "./_horizontalScroll";
 
 $(function() {
-  rollingText("illustrations", ".title__illustrations");
+  // animation();
+  titleAnimation(".illustrations__title");
+  titleAnimation(".websites__title");
+  // rollingText("illustrations", ".title__illustrations");
+  gridGallery();
+  customCursor();
+  // horizontalScroll();
+  // gallery();
 });
-
-function rollingText(text, element) {
-  let $viewWidth = $(window).width();
-  $(window).resize(() => {
-    $viewWidth = $(window).width();
-    console.log($viewWidth);
-    return $viewWidth;
-  });
-
-  console.log($viewWidth);
-
-  setInterval(() => {
-    const $placeholder = $(element);
-    let $title = $(`<h1>${text}</h1>`);
-    $title.css("left", $viewWidth);
-
-    $title.animate({ left: "-500px" }, 20000, "linear", function() {
-      $(this).remove();
-    });
-
-    $placeholder.append($title);
-    console.log((1 / $viewWidth) * 2000 * 1000);
-  }, (1 / $viewWidth) * 2000 * 3000);
-}

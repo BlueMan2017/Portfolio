@@ -1,22 +1,32 @@
-html body {
+// @import "../fonts/a_FuturaOrtoSh-Bold.svg";
+
+$fullHeight: 90vh;
+
+body {
+  background: #f7f3f0;
   overflow-x: hidden;
+  cursor: none;
 }
 .wrapper {
   max-width: 1400px;
+  padding: 0 10%;
+  margin: 0 auto;
 }
 // INTRO
 header {
   display: flex;
-  padding: 0 10%;
+  align-items: center;
+  height: 10vh;
 }
 .intro {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
-  padding: 0 10%;
+  height: $fullHeight;
 }
 
 .works {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  min-height: 100vh;
 }

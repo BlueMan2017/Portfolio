@@ -28,6 +28,7 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        exclude: /img/,
         use: [
           {
             loader: "file-loader",
@@ -45,12 +46,20 @@ module.exports = {
           {
             loader: "image-webpack-loader",
             options: {
-              bypassOnDebug: true, // webpack@1.x
-              disable: true // webpack@2.x and newer
+              bypassOnDebug: true,
+              disable: true
             }
           }
         ]
       }
+      // {
+      //   test: /\.svg$/,
+      //   loader: "svg-inline-loader"
+      // }
+      // {
+      //   test: /\.modules\.js$/,
+      //   use: ["script-loader"]
+      // }
     ]
   },
   plugins: [
