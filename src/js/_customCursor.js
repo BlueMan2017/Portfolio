@@ -1,8 +1,8 @@
 import $ from "jquery";
 
 export function customCursor() {
-  const $cursor = $("<div class='cursor'></div>");
-  $("body").append($cursor);
+  const $cursor = $("#cursor");
+  const $svg = $cursor.find("circle");
 
   $("body").on("mousemove", e => {
     $cursor.css({ top: e.pageY + "px", left: e.pageX + "px" });
@@ -10,17 +10,15 @@ export function customCursor() {
 
   $("img, .language a")
     .mouseenter(() => {
-      $cursor.css({
-        background: "orangered",
-        height: "10px",
-        width: "10px"
+      $cursor.css({ transform: "scale(0.3)" });
+      $svg.css({
+        fill: "orangered"
       });
     })
     .mouseleave(() => {
-      $cursor.css({
-        background: "transparent",
-        height: "60px",
-        width: "60px"
+      $cursor.css({ transform: "scale(1)" });
+      $svg.css({
+        fill: "none"
       });
     });
 }

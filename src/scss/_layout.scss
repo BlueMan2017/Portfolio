@@ -3,7 +3,7 @@
 $fullHeight: 90vh;
 
 body {
-  background: #f7f3f0;
+  background: $background;
   overflow-x: hidden;
   cursor: none;
 }
@@ -24,9 +24,10 @@ header {
   height: $fullHeight;
 }
 
-.works {
+.gallery {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   flex-wrap: wrap;
   min-height: 100vh;
 }

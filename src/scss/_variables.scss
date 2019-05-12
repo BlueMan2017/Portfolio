@@ -1,3 +1,11 @@
+$display-wide: 1920;
+$display-narrow: 375;
+
+@mixin fluid($property, $minValue, $maxValue) {
+  $x: ($maxValue - $minValue)/ ($display-wide - $display-narrow);
+  $y: $maxValue - $display-wide * $x;
+  #{$property}: calc(#{100 * $x}vw + #{$y}px);
+}
 //
 // Variables
 //
@@ -34,3 +42,13 @@ $indent-amount: 40px !default;
 // However, changing any of the variables above will cause
 // $normalize-vertical-rhythm to be automatically set to true.
 $normalize-vertical-rhythm: false !default;
+
+$background: #fefff1;
+// #f7f3f0
+$title: orangered;
+$border-color: #202034;
+$border-width: 1px;
+$info: orangered;
+// #fefff1
+// #202034
+// #fb431e

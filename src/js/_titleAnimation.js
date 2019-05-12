@@ -1,21 +1,26 @@
 import $ from "jquery";
+import { TweenMax, TimelineMax, Power4 } from "gsap";
 
-export function titleAnimation(section) {
-  const $titleWrapper = $(`${section}`);
-  // const title = "ILLUSTRATIONS".split("");
+export function titleAnimation(section, title) {
+  const $titleWrapper = $(`${section}`).find(".title");
 
-  // const createLetter = () => {
-  //   console.log(title);
-  //   title.forEach(e => {
-  //     let $span = $(`<span>${e}</span>`);
-  //     $titleWrapper.append($span);
-  //   });
-  // };
+  const titleName = title.split("");
 
-  // createLetter();
+  const createLetter = () => {
+    console.log(titleName);
+    titleName.forEach(e => {
+      let $span = $(`<span class='hidden'>${e}</span>`);
+      $titleWrapper.append($span);
+    });
+  };
+
+  createLetter();
+
+  const tl = new TimelineMax({});
+  tl.staggerTo(".hidden", 1.5, { y: "0", ease: Power4.easeOut }, 0.15);
 
   const textApear = elem => {
-    if ($titleWrapper.css("opacity") !== 0) {
+    if ($titleWrapper.css("display") !== "none") {
       $(elem).each((i, e) => {
         $(e).css("transform", "matrix(1, 0, 0, 1, 0, 0)");
       });
@@ -29,15 +34,22 @@ export function titleAnimation(section) {
   $(window).scroll(function() {
     const $scrollPos = $(window).scrollTop();
     const $winHeight = $(window).height();
+    const $titlePos = $(`${section}`).offset().top;
+
     const $header = $titleWrapper.find("h1");
-    const $spans = $titleWrapper.find("span");
-    if ($scrollPos >= $winHeight / 2) {
-      $titleWrapper.css("opacity", 1);
+    if (
+      $scrollPos > $titlePos - $winHeight / 2 &&
+      $scrollPos < $titlePos + $winHeight / 8
+    ) {
+      $titleWrapper.css("display", "block");
       textApear($header);
-      textApear($spans);
-    } else if ($(window).scrollTop() == 0) {
-      $titleWrapper.css("opacity", 0);
-      textApear($spans);
+    } else if (
+      $scrollPos > $titlePos + $winHeight / 8 ||
+      $scrollPos < $titlePos - $winHeight ||
+      $scrollPos == 0
+    ) {
+      $titleWrapper.css("display", "none");
+      textApear($header);
     }
   });
 }
