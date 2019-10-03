@@ -7,14 +7,12 @@
   }
 }
 
-@keyframes rolling {
-  0% {
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
+@keyframes title--marquee {
+   0% {
+    transform: translateX(0);
   }
   100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
+    transform: translateX(-66.6%);
   }
 }
 

@@ -4,17 +4,17 @@ import { TweenMax, TimelineMax, Power4 } from "gsap";
 export function titleAnimation(section, title) {
   const $titleWrapper = $(`${section}`).find(".title");
 
-  const titleName = title.split("");
+  // const titleName = title.split("");
 
-  const createLetter = () => {
-    console.log(titleName);
-    titleName.forEach(e => {
-      let $span = $(`<span class='hidden'>${e}</span>`);
-      $titleWrapper.append($span);
-    });
-  };
+  // const createLetter = () => {
+  //   console.log(titleName);
+  //   titleName.forEach(e => {
+  //     let $span = $(`<span class='hidden'>${e}</span>`);
+  //     $titleWrapper.append($span);
+  //   });
+  // };
 
-  createLetter();
+  // createLetter();
 
   const tl = new TimelineMax({});
   tl.staggerTo(".hidden", 1.5, { y: "0", ease: Power4.easeOut }, 0.15);

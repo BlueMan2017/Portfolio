@@ -179,6 +179,22 @@ canvas {
   // display: inline-flex;
 }
 
+.title__marquee {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #222222;
+  margin: 0 auto;
+  width: 120%; // or 100% inside a container
+  height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+}
+
 // MARQUEE
 
 .marquee {
@@ -200,7 +216,8 @@ canvas {
 .marquee__content {
   width: 300% !important;
   display: flex;
-  line-height: 30px;
+  align-content: center;
+  line-height: 50px;
   animation: marquee 30s linear infinite forwards;
   &:hover {
     animation-play-state: paused;
